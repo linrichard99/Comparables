@@ -1,9 +1,11 @@
-//Team Noodle- Sunghex Kim, Richard Lin
-//APCS1 pd10
-//HW43 -- This or That or Fourteen Other Things
-//2015-12-08
+/*
+  Richard Lin
+  APCS pd10
+  hw45 -- Come Together
+  2015-12-09
+*/
 
-public class Binary {
+public class Binary implements Comparable{
 
     private int _decNum;
     private String _binNum;
@@ -120,11 +122,10 @@ public class Binary {
       =====================================*/
     public static int binToDec( String s ) {
 	int dtemp = 0;
+	int place = s.length() - 1;
 	for( int i = 0; i < s.length(); i++ ) {
-	    if( s.substring(i,i+1).equals("1") ) {
-		dtemp += Math.pow(2.0,(s.length() - 1.0));
-	    }
-	    s = s.substring(i+1);
+	    dtemp += Math.pow(2, place) * Integer.parseInt(s.substring(i,i+1));
+	    place--;
 	}
 	return dtemp;
     }

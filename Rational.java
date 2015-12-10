@@ -122,8 +122,7 @@ public class Rational implements Comparable {
 
 	//This is a check to see if its Rational
 	if( !(factor instanceof Rational) ) {
-	    System.out.println("Error. Not a Rational. Printin -2");
-	    return -2;
+	    throw new ClassCastException("compareTo() takes Rational.");
 	}
 
 	//Typecasting factor into a rational
@@ -172,7 +171,7 @@ public class Rational implements Comparable {
 
     //==================================================================
     //main method
-    public static void main( String[]args ) {
+    public static void main( String[] args ) {
 	Rational bob = new Rational();
 	Rational emma = new Rational();
 	Rational kevin = new Rational(3, 9);
